@@ -6,7 +6,8 @@
 if __name__ == '__main__':
     from Connetion import testing
     conenect = testing.dba()
-    conenect.dataBase()
+    #conenect.dataBase()
+    conenect.close()
 
 
 

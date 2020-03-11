@@ -37,3 +37,12 @@ class dba:
 
         except Exception as e:
             print('ERROR IN DBA: ', e)
+    def close(self):
+        try:
+
+            self.connection.close()
+
+        except Exception as e:
+            print('ERROR IN DBA: ', e)
+
+
