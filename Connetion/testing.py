@@ -6,12 +6,11 @@ class dba:
                                  passwd='',)
     cursor = connection.cursor()
 
-
     def dataBase(self):
 
         try:
-
-            self.cursor.execute('create database DLC')
+            cursor = self.connection.cursor()
+            cursor.execute('create database DLC')
 
         except Exception as e:
             print('ERROR IN DBA: ',e)

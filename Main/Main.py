@@ -1,12 +1,12 @@
-def estudo():
+'''def estudo():
     from Connetion import Dba
     valor = Dba.estudo()
     valor.setValor('hahah')
-    print(valor.getValor())
-
-import pymysql
-
-
+    print(valor.getValor())'''
+if __name__ == '__main__':
+    from Connetion import testing
+    conenect = testing.dba()
+    conenect.dataBase()
 
 
 
