@@ -191,7 +191,7 @@ class SQLManager (object):
         """
         self.query = query
 
-import MySQLdb as mdb
+import  as mdb
 from SQLManager import SQLManager
 
 __author__ = 'pedro'

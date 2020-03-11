@@ -4,7 +4,7 @@ def estudo():
     valor.setValor('hahah')
     print(valor.getValor())
 
-
+import pymysql
 
 
 
