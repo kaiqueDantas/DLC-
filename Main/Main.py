@@ -6,7 +6,9 @@
 
 if __name__ == '__main__':
     from Connetion import testing
-    conenect = testing.dba()
-    print(str(conenect.select()))
+    connection = testing.dba()
+    #connection.insert()
+
+    print(str(connection.select()))
 
 
