@@ -42,10 +42,13 @@ class dba:
         except Exception as e:
             print('Error message in the database : ',e)
 
-    def select(self, query):
+    def select(self,):
         try:
+            self.cursor.execute('use DLC;')
+            self.cursor.execute('select * from dlc;')
 
-            self.cursor.execute(query)
+
+
 
         except Exception as e:
             print('Error message in the database : ', e)
