@@ -3,7 +3,8 @@ from aifc import Error
 import pymysql
 
 
-class dba:
+
+class BancoDlc:
 
     ''' https://pynative.com/python-mysql-tutorial/
 
@@ -27,20 +28,23 @@ class dba:
         except Exception as e:
             print('Error message in the database : ',e)
 
-    def update(self, query):
+    def update(self):
 
         '''Função destinada a alteração de dados '''
         try:
-
+            query = ';'
             self.cursor.execute(query)
+            self.connection.commit()
+            self.select()
+            self.close()
 
         except Exception as e:
             print('Error message in the database : ',e)
 
-    def create(self, query):
+    def create(self):
         try:
 
-            self.cursor.execute(query)
+            self.cursor.execute('')
 
         except Exception as e:
             print('Error message in the database : ',e)
@@ -54,10 +58,20 @@ class dba:
             print('Error message in the database : ',e)
 
     def insert(self):
+
+       lista = list()
+        
+       for i in range(3):
+           valor = f'{};'
+           lista.append(valor)
+
         try:
-            self.cursor.execute("""INSERT INTO dlc (id_dlc, cod_dlc, nome_dlc) 
+
+
+
+            self.cursor.execute(f"""INSERT INTO dlc (id_dlc, cod_dlc, nome_dlc) 
                            VALUES 
-                           (2, 24, 'Call of duty') """)
+                           ({lista}) """)
             self.connection.commit()
             print(self.cursor.rowcount, "Record inserted successfully into Laptop table")
 
@@ -71,13 +85,18 @@ class dba:
             sql_select_Query = "select * from dlc"
             self.cursor.execute(sql_select_Query)
             records = self.cursor.fetchall()
+
+            '''self.curso.rowcount retorna a quantidade de linhas executadas '''
             print("Total number of rows in Laptop is: ", self.cursor.rowcount)
 
             print("\nPrinting each laptop record")
+
+            '''Me retorna o banco de dados inteiro'''
             for row in records:
                 print(row)
 
             self.close()
+            
         except Error as e:
             print("Error reading data from MySQL table", e)
 

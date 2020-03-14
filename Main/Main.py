@@ -5,8 +5,8 @@
     print(valor.getValor())'''
 
 if __name__ == '__main__':
-    from Connetion import testing
-    connection = testing.dba()
+    from Connetion import DLC
+    connection = DLC.BancoDlc()
     #connection.insert()
 
     print(str(connection.select()))
