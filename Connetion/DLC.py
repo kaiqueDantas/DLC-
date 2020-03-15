@@ -59,19 +59,10 @@ class BancoDlc:
 
     def insert(self):
 
-       lista = list()
-        
-       for i in range(3):
-           valor = f'{};'
-           lista.append(valor)
-
         try:
-
-
-
             self.cursor.execute(f"""INSERT INTO dlc (id_dlc, cod_dlc, nome_dlc) 
                            VALUES 
-                           ({lista}) """)
+                           ({1,1,'WWII'}) """)
             self.connection.commit()
             print(self.cursor.rowcount, "Record inserted successfully into Laptop table")
 
